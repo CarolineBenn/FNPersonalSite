@@ -1,0 +1,50 @@
+/*
+ Theme Name:   Freya Nash Clean Cut
+ Theme URI:    http://freyanash.com
+ Description:  Custom Freya Nash WordPress Theme
+ Author:       Caroline Benn
+ Author URI:   http://carolinebenn.co.uk
+ Template:     twentysixteen
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  twenty-sixteen-child
+*/
+
+
+body {
+  background: #efefef;
+}
+
+img {
+  border-radius: 2px;
+}
+
+a {
+  color: #aaa;
+}
+
+a:hover {
+  -o-transition:      color 0.2s linear;
+  -moz-transition:    color 0.2s linear;
+  -khtml-transition:  color 0.2s linear;
+  -webkit-transition: color 0.2s linear;
+  -ms-transition:     color 0.2s linear;
+  transition:         color 0.2s linear;s
+}
+
+.center-vertically { 
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.one-hundred {
+  width: 100%;
+}
+
+.hidden { /* For fading elements in: */
+ 
+  display: none;
+}

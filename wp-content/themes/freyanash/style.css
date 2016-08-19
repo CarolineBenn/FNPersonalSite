@@ -1,0 +1,479 @@
+/*
+ Theme Name:   Freya Nash
+ Theme URI:    http://freyanash.com
+ Description:  Custom Freya Nash WordPress Theme
+ Author:       Caroline Benn
+ Author URI:   http://carolinebenn.co.uk
+ Template:     twentysixteen
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  twenty-sixteen-child
+*/
+
+
+/* General: */
+
+
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text);
+@import url(https://fonts.googleapis.com/css?family=EB+Garamond);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,600);
+@import 'https://fonts.googleapis.com/css?family=Ubuntu:300,400,700';
+
+body {
+  background: #f5f5f5;
+}
+
+img {
+  border-radius: 2px;
+}
+
+a {
+  color: #aaa;
+}
+
+a:hover {
+  -o-transition:      color 0.2s linear;
+  -moz-transition:    color 0.2s linear;
+  -khtml-transition:  color 0.2s linear;
+  -webkit-transition: color 0.2s linear;
+  -ms-transition:     color 0.2s linear;
+  transition:         color 0.2s linear;
+}
+
+.center-vertically { 
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.one-hundred {
+  width: 100%;
+}
+
+.hidden { /* For fading elements in: */
+ 
+  display: none;
+}
+
+
+ul#menu-social-menu a {
+  color: pink;
+}
+
+/* Header: */
+
+header {
+  background: #f5f5f5;
+}
+
+h1.site-title a {
+  text-transform: uppercase;
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+  color: #444;
+}
+
+h1.site-title a span {
+  font-weight: 700;
+}
+
+header a {
+  color: #444;
+  text-transform: uppercase;
+}
+
+header a:hover, header a:active, header a:focus {
+  color: #333;
+}
+
+
+
+nav#site-navigation {
+  text-align: right;
+}
+
+ul#menu-main-menu {
+  margin: 0
+}
+
+
+#site-header-menu ul li {
+  display: inline-block;
+  margin: 0 1em;
+  font-size: 1em;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+nav#site-navigation ul li::first-letter {
+  font-size: 1.2rem;
+}
+
+#site-header-menu ul li:first-child {
+  margin-left: 0;
+}
+
+#site-header-menu ul li:last-child {
+  margin-right: 0;
+}
+
+/* Homepage: */
+
+header.homepage {
+  background: transparent;
+  position: absolute;
+  width: 100%;
+  margin-top: 1em
+}
+
+.homepage-image {
+  max-height: 100vh;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+}
+
+h1#homepage-title {
+  background: rgba(255,255,255,0.5);
+  color: #323;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-transform: uppercase;
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 5em;
+  font-weight: 300;
+  letter-spacing: 1px;
+  /*text-shadow: 2px 2px 5px rgba(0,0,0,0.7);*/
+}
+
+h1#homepage-title span {
+  font-weight: 700;
+}
+
+.homepage-nav ul li a:hover, .homepage-nav ul li a:active, .homepage-nav ul li a:focus {
+  color: #c5c5c5;
+}
+
+.homepage-nav ul {
+  text-align: center;
+  margin-left: 0;  
+}
+
+.homepage-nav ul li {
+  margin: 0 1em !important;
+}
+
+.homepage-footer {
+  margin-top: 0 !important;
+}
+
+
+/* Category page: */
+
+.page-header {
+  display: flex;
+  margin-bottom: 2em;
+  color: #444;
+}
+
+.page-header h2 {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #444;
+}
+
+.page-header.category {
+  margin-bottom: 2em;
+}
+
+.page-header .row:first-child {
+  border-bottom: 3px solid #444;
+}
+
+.page-header h2 {
+  margin: 0.1em 0;
+}
+
+.category-description p {
+  margin: 1em 0;
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: italic;
+  float: right;
+}
+
+.row.category-page .medium-4.columns {
+  background: #ffc118;
+}
+
+.medium-4.columns.category-link:last-child {
+  float: left;
+}
+
+.category-link {
+  height: 300px;
+  text-align: center;
+}
+
+.category-link h3 {
+
+}
+
+.category-link a {
+  display: block;
+  position: relative;
+  overflow: hidden;  
+}
+
+.row.category-thumbnails .medium-6.columns {
+margin-bottom: 1em;
+}
+
+
+a.post-title {
+  color: red;
+}
+
+/* Single-works page: */
+
+h1.work-title {
+  display: inline-block;
+}
+
+span.work-title-year p {
+  display: inline-block;  
+  margin-left: 0.25em;
+  font-style: italic;
+}
+
+span.work-title-year::before {
+  content: "(";
+  font-style: italic;
+}
+
+span.work-title-year::after {
+  content: ")";
+  font-style: italic;
+}
+
+/* Single post: */
+
+.featured-image-container {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 2em;
+}
+
+#featured-image {
+  max-height: 470px;
+  height: 470px;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+#featured-image img {
+  width: 100%;
+  object-fit: contain;
+}
+
+figure.gallery-item {
+  display: inline-block;
+  padding: 0em 0.5em 0.5em 0;
+  margin: 0;
+}
+
+figure.gallery-item img {
+  width: 80px; 
+  height: 80px;
+  object-fit: cover;
+  box-shadow: 2px 2px 3px rgba(50,50,50,0.2);
+}
+
+
+
+
+#post-description h6 {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  color: #777;
+  border-left: 1px solid #777;
+  padding-left: 1em;
+}
+
+
+
+
+
+
+/* Footer: */
+
+footer#colophon {
+  padding-top: 1em;
+  margin-top:  3em;
+  background:  transparent;
+}
+
+footer#colophon .row {
+  border-top: 7px solid #444;
+  border-radius: 2px;
+  padding-top: 2em;
+}
+
+footer#colophon nav ul {
+  margin-left: 0;
+}
+
+footer#colophon nav ul li {
+  display: inline-block;
+}
+
+footer#colophon a {
+  margin-right: 1em;
+  text-transform: uppercase;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+footer#colophon a:hover {
+color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+===========================
+  H O V E R   E F F E C T
+===========================
+*/
+
+.effects {
+  /*padding-left: 15px;*/
+}
+.effects .img {
+  position: relative;
+  float: left;
+  margin-bottom: 5px;
+  width: 25%;
+  overflow: hidden;
+  width: 100%;
+  background-position: center center;
+  background-size: cover;
+}
+.effects .img:nth-child(n) {
+  margin-right: 5px;
+}
+.effects .img:first-child {
+  /*margin-left: -15px;*/
+}
+.effects .img:last-child {
+  margin-right: 0;
+}
+.effects .img img {
+  display: block;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.overlay {
+  display: block;
+  position: absolute;
+  z-index: 20;
+  background: rgba(50, 50 , 50, 0.5);
+  overflow: hidden;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+a.close-overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 45px;
+  text-align: center;
+  background-color: #000;
+  cursor: pointer;
+}
+a.close-overlay.hidden {
+  display: none;
+}
+
+a.expand {
+  display: block;
+  position: absolute;
+  z-index: 100;
+  text-align: center;
+  color: #fff;
+  line-height: 50px;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+
+#effect .overlay {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+}
+
+#effect .overlay a.expand {
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: 0 auto;
+  opacity: 1;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  height: 100%;
+}
+
+#effect .overlay a.expand h3 {
+  margin: 0;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-family: 'Josefin Sans', sans-serif;
+  text-shadow: 2px 2px 5px rgba(50, 50, 50, 0.6);
+  top: 50%;
+  transform: translateY(-50%);
+  position: relative;
+
+}
+
+#effect .img.hover .overlay {
+  opacity: 1;
+}
+
+
+
+
