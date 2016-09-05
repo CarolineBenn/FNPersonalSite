@@ -18,9 +18,12 @@ function mytheme_setup() {
 add_action('after_setup_theme', 'mytheme_setup');
 */
 
+
+
+// This function just strips any images from `the_content()` hook:
 add_filter('the_content', 'strip_images', 2);
 function strip_images($content){
-   return preg_replace('/<img[^>]+./','',$content);
+   return preg_replace('/<img[^>]+./','', $content);
 }
 
 

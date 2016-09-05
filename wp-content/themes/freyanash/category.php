@@ -19,24 +19,24 @@
 
 
 <div class="row category-thumbnails" data-equalizer>
-      <div id="effect" class="effects clearfix">
-  <?php if ( have_posts() ) : ?>
-  <?php while ( have_posts() ) : the_post(); ?>
-    <div class="medium-6 columns category-link">
-        <div class="img" style="background-image: url('<?php  the_post_thumbnail_url(); ?>'); height: 300px;">
-          <div class="overlay">
+  <div id="effect" class="effects clearfix">
+    <?php if ( have_posts() ) : ?>
+      <?php while ( have_posts() ) : the_post(); ?>
+        <div class="medium-6 columns category-link">
+          <div class="img" style="background-image: url('<?php  the_post_thumbnail_url(); ?>'); height: 300px;">
+            <div class="overlay">
 
-            <a href="<?php the_permalink() ?>" class="expand"><h3><?php the_title(); ?></h3></a>
-            <a class="close-overlay hidden">x</a>
+              <a href="<?php the_permalink() ?>" class="expand"><h3><?php the_title(); ?></h3></a>
+              <a class="close-overlay hidden">x</a>
+            </div>
           </div>
         </div>
-      </div>
-    <?php endwhile;
+      <?php endwhile;
       else: ?>
       <p>Sorry, no posts matched your criteria.</p>
     <?php endif; ?>
-    </div>
   </div>
+</div>
 
 
 <hr>

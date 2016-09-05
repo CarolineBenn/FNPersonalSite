@@ -10,13 +10,27 @@ $(document).on('ready', function(){
 
 
   (function(){
-  // Fades in main title on homepage only:
-  var $siteTitle = $('h1#homepage-title');
-  $siteTitle.fadeIn(1500).removeClass('hidden');
+    // Fades in main title on homepage only:
+    var $siteTitle = $('h1#homepage-title');
+    $siteTitle.fadeIn(1500).removeClass('hidden');
 
-  // Hide nav on homepage initially:
+    // Hide nav on homepage initially:
     var $navLinks = $('.homepage-nav ul li');
-    fadeInEachElement($navLinks, 500)
+
+    $navLinks.each(function(index, link){
+      $(link).addClass('faded-out');
+    });
+
+
+    $navLinks.each(function(index, link){
+      setTimeout(function() {
+        $(link).addClass('fade-in').removeClass('faded-out');
+      }, 500 * index);
+    });
+
+
+
+
   })();
 
   // =====================================
@@ -51,10 +65,10 @@ $(document).on('ready', function(){
   //      F A D E   I M A G E   I N
   // =====================================
 
-(function(){
-  var $linkImages = $('#effect .medium-6.columns.category-link')
-  fadeInEachElement($linkImages, 300);
-})();
+  (function(){
+    var $linkImages = $('#effect .category-link')
+    fadeInEachElement($linkImages, 300);
+  })();
 
 
 // ========================================
@@ -65,12 +79,10 @@ $(document).on('ready', function(){
   var $thumbnailContainers = $('figure.gallery-item');
 
   $thumbnailContainers.each(function(index, thumbnail){
-    console.log(thumbnail)
-    $(thumbnail).attr('data-equalizer-watch')
+    $(thumbnail).attr('data-equalizer-watch');
   });
 
 })();
-
 
 (function(){
   var $images = $('#gallery img');
@@ -84,14 +96,14 @@ $(document).on('ready', function(){
   $featuredImage.html($(defaultImage).clone());
 
   $images.each(function(index, image){
+
     $(image).on('click', function(e){
       e.preventDefault();
       var $self = $(this);
       $featuredImage.html($self.clone());
-
       // Scroll to top of image so you can see it clearly:
       $('html, body').animate({
-        scrollTop: $featuredImage.offset().top
+        scrollTop: $featuredImage.offset().top + (-40) // Plus -40 to give it some room at the top
       }, 500);
     });
   });
@@ -99,10 +111,59 @@ $(document).on('ready', function(){
 })();
 
 
+// ==========================================
+//   H I D E   W O R K S   C A T E G O R Y 
+// ==========================================
+
+(function(){
+  $categories = $('#category-index .category-link');
+  var toHide = ($categories.slice(-1)[0]);
+  $(toHide).remove()
+  fadeInEachElement($categories, 500)
+})();
+
+
+(function(){
+  var $featuredImage = $('#featured-image');
+  var $images        = $('.gallery img')
+  var defaultImage   = $images[0];
+
+  $featuredImage.html($(defaultImage).clone());
+
+
+  var gallery = $('#post-description .gallery');
+
+
+  var container = $('.thumbnails');
+  container.append(gallery);
+
+  var thumb = $('.gallery-item img')
+
+  thumb.on('click', function(e){
+    e.preventDefault();
+    var $self = $(this);
+
+    $featuredImage.html($self.clone());
+    $('html, body').animate({
+      scrollTop: $featuredImage.offset().top + (-40) // Plus -40 to give it some room at the top
+    }, 500);
+
+  });
+
+
+
+})();
+
+
+
 // =======================================
 //           F U N C T I O N S
 // =======================================
 
+function hideLastElement(array){
+  var elementToHide = array.slice(-1)[0];
+  return $(elementToHide).hide();
+}
 
 function fadeInEachElement(selector, time){
   $(selector).each(function() {
@@ -115,8 +176,6 @@ function fadeInEachElement(selector, time){
 }
 
 }); // End of $(document).on('ready', function(){})
-
-
 
 
 

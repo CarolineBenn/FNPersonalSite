@@ -26,7 +26,7 @@ define('DB_NAME', 'freya_wp');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'moose');
+define('DB_PASSWORD', 'moosemoose');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
